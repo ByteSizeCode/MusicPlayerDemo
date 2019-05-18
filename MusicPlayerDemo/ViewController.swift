@@ -71,8 +71,9 @@ extension ViewController: NSTableViewClickableDelegate {
             lastRowTapped = -1 //Reset
         }
         else {
-            
-            //The below line is fine for small data sets, but has a performance penalty for large data sets (O(n))- a more complex solution is needed. Ensures all other cells are correctly named by song title (removes any occurenced of "Playing...").
+            /*The below line is fine for small data sets, but has a performance penalty for large data sets (O(n))- 
+            a more complex solution is needed. Ensures all other cells are correctly named by song title 
+            (removes any occurenced of "Playing..."). */
             for (i, element) in songsInTableView.enumerated() {element.textField?.stringValue = songNames[i - 1]}
             
             //Play appropriate song
